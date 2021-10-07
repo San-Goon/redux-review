@@ -4,22 +4,13 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import store from "./redux/store";
-import { addTodo } from "./redux/actions";
-
-const unsubscribe = store.subscribe(() => {
-  console.log(store.getState());
-});
-
-console.log(store);
-store.dispatch(addTodo("coding"));
-store.dispatch(addTodo("read book"));
-store.dispatch(addTodo("eat"));
-
-unsubscribe();
+import { Provider } from "react-redux";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
