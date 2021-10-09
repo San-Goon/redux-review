@@ -1,4 +1,4 @@
-import { addTodo } from "../redux/actions";
+import { addTodo } from "../redux/modules/todos";
 import TodoForm from "../components/TodoForm";
 import { useDispatch } from "react-redux";
 import { useCallback } from "react";
